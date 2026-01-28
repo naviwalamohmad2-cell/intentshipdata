@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Commerce Dashboard</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+    body {
+        background: #0e0e0e;
+        color: #fff;
+        display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 240px;
+        height: 100vh;
+        background: #121212;
+        padding: 25px;
+        position: fixed;
+        border-right: 1px solid #222;
+    }
+
+    .sidebar h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #00eaff;
+        text-shadow: 0 0 10px #00eaff;
+    }
+
+    .sidebar ul {
+        list-style: none;
+    }
+
+    .sidebar ul li {
+        margin: 20px 0;
+    }
+
+    .sidebar ul li a {
+        text-decoration: none;
+        color: #ccc;
+        font-size: 18px;
+        display: block;
+        padding: 10px;
+        transition: 0.3s;
+    }
+
+    .sidebar ul li a:hover {
+        color: #00eaff;
+        transform: translateX(5px);
+    }
+
+    /* Dashboard Area */
+    .main {
+        margin-left: 260px;
+        padding: 20px 40px;
+        width: 100%;
+    }
+
+    .title {
+        font-size: 30px;
+        margin-bottom: 20px;
+        color: #00eaff;
+    }
+
+    /* Stats Cards */
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.06);
+        padding: 25px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 1px solid #222;
+        transition: 0.3s;
+        box-shadow: 0 0 20px rgba(0, 238, 255, 0.05);
+    }
+
+    .card:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 0 25px rgba(0, 238, 255, 0.2);
+    }
+
+    .card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        font-size: 28px;
+        font-weight: bold;
+        color: #00eaff;
+    }
+
+    /* Product Table */
+    .table-section {
+        margin-top: 40px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid #333;
+    }
+
+    th {
+        background: #00eaff;
+        color: #000;
+    }
+
+    tr:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .sidebar {
+            display: none;
+        }
+        .main {
+            margin-left: 0;
+            padding: 20px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>Dashboard</h2>
+    <ul>
+        <li><a href="#">📊 Overview</a></li>
+        <li><a href="#">📦 Products</a></li>
+        <li><a href="#">🧾 Orders</a></li>
+        <li><a href="#">👤 Customers</a></li>
+        <li><a href="#">⚙ Settings</a></li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+    <h1 class="title">E-Commerce Dashboard</h1>
+
+    <!-- Stats Cards -->
+    <div class="cards">
+        <div class="card">
+            <h3>Total Sales</h3>
+            <p>₹1,25,000</p>
+        </div>
+
+        <div class="card">
+            <h3>Orders</h3>
+            <p>243</p>
+        </div>
+
+        <div class="card">
+            <h3>Customers</h3>
+            <p>89</p>
+        </div>
+
+        <div class="card">
+            <h3>Products</h3>
+            <p>57</p>
+        </div>
+    </div>
+
+    <!-- Product Table -->
+    <div class="table-section">
+        <h2>Top Selling Products</h2>
+
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Sales</th>
+                <th>Stock</th>
+                <th>Revenue</th>
+            </tr>
+
+            <tr>
+                <td>Smart Watch</td>
+                <td>120</td>
+                <td>34</td>
+                <td>₹84,000</td>
+            </tr>
+
+            <tr>
+                <td>Wireless Earbuds</td>
+                <td>98</td>
+                <td>22</td>
+                <td>₹58,800</td>
+            </tr>
+
+            <tr>
+                <td>Tablet Pro</td>
+                <td>65</td>
+                <td>10</td>
+                <td>₹1,55,000</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
