@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>3D Hover Navbar</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background: #0f0f0f;
+        color: #fff;
+    }
+
+    /* Navbar */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 40px;
+        background: #111;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    }
+
+    .logo {
+        font-size: 26px;
+        font-weight: 700;
+        color: #00eaff;
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px #00eaff;
+    }
+
+    /* Nav links */
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+    }
+
+    .nav-links li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+        padding: 10px 15px;
+        position: relative;
+        display: inline-block;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    /* ===== 3D HOVER EFFECT ===== */
+    .nav-links li a:hover {
+        transform: translateY(-6px) scale(1.15) rotateX(10deg);
+        color: #00eaff;
+        text-shadow: 0 0 15px #00eaff;
+    }
+
+    /* Active state */
+    .nav-links li .active {
+        color: #00eaff;
+        text-shadow: 0 0 15px #00eaff;
+        border-bottom: 3px solid #00eaff;
+        padding-bottom: 4px;
+    }
+
+    /* Hamburger */
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .hamburger span {
+        width: 28px;
+        height: 3px;
+        background: #fff;
+        transition: 0.3s;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background: #111;
+            width: 100%;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px 0;
+            gap: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .nav-links.show {
+            display: flex;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+    }
+
+</style>
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MyBrand</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("show");
+    }
+</script>
+
+</body>
+</html>
